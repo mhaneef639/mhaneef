@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog - Thoughts, insights, and daily posts by Mohammed Haneef.">
+    <title>Blog | Mohammed Haneef</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">MH</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../about.html" class="nav-link">About</a></li>
+                <li><a href="../services.html" class="nav-link">Services</a></li>
+                <li><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="index.html" class="nav-link active">Blog</a></li>
+                <li><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Blog</h1>
+                <p>Thoughts, insights, and daily reflections.</p>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-layout">
+                    <div class="blog-main">
+                        <div class="blog-grid">
+                            <!-- Blog Post Card Template - Copy and modify for each new post -->
+                            <article class="blog-card">
+                                <a href="posts/sample-post.html" class="blog-card-link">
+                                    <div class="blog-card-image">
+                                        <div class="blog-image-placeholder">Post Image</div>
+                                    </div>
+                                    <div class="blog-card-content">
+                                        <div class="blog-meta">
+                                            <span class="blog-category">Category</span>
+                                            <span class="blog-date">February 4, 2024</span>
+                                        </div>
+                                        <h2>Your First Blog Post Title</h2>
+                                        <p>Write a brief excerpt or summary of your blog post here. Keep it engaging to encourage readers to click through.</p>
+                                        <span class="read-more">Read More →</span>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <article class="blog-card">
+                                <a href="#" class="blog-card-link">
+                                    <div class="blog-card-image">
+                                        <div class="blog-image-placeholder">Post Image</div>
+                                    </div>
+                                    <div class="blog-card-content">
+                                        <div class="blog-meta">
+                                            <span class="blog-category">Category</span>
+                                            <span class="blog-date">February 3, 2024</span>
+                                        </div>
+                                        <h2>Another Blog Post Title</h2>
+                                        <p>Another engaging excerpt that gives readers a taste of what the post is about.</p>
+                                        <span class="read-more">Read More →</span>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <article class="blog-card">
+                                <a href="#" class="blog-card-link">
+                                    <div class="blog-card-image">
+                                        <div class="blog-image-placeholder">Post Image</div>
+                                    </div>
+                                    <div class="blog-card-content">
+                                        <div class="blog-meta">
+                                            <span class="blog-category">Category</span>
+                                            <span class="blog-date">February 2, 2024</span>
+                                        </div>
+                                        <h2>A Third Blog Post</h2>
+                                        <p>Continue adding posts as you write them. Each card links to its own page.</p>
+                                        <span class="read-more">Read More →</span>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <!-- Add more blog cards here -->
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav class="pagination">
+                            <a href="#" class="pagination-link disabled">← Previous</a>
+                            <span class="pagination-info">Page 1 of 1</span>
+                            <a href="#" class="pagination-link disabled">Next →</a>
+                        </nav>
+                    </div>
+
+                    <aside class="blog-sidebar">
+                        <div class="sidebar-section">
+                            <h3>Categories</h3>
+                            <ul class="category-list">
+                                <li><a href="#">Category 1 <span>(3)</span></a></li>
+                                <li><a href="#">Category 2 <span>(5)</span></a></li>
+                                <li><a href="#">Category 3 <span>(2)</span></a></li>
+                                <li><a href="#">Category 4 <span>(4)</span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Recent Posts</h3>
+                            <ul class="recent-posts">
+                                <li>
+                                    <a href="posts/sample-post.html">
+                                        <span class="recent-title">Your First Blog Post Title</span>
+                                        <span class="recent-date">Feb 4, 2024</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="recent-title">Another Blog Post Title</span>
+                                        <span class="recent-date">Feb 3, 2024</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="recent-title">A Third Blog Post</span>
+                                        <span class="recent-date">Feb 2, 2024</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Newsletter</h3>
+                            <p>Subscribe to get notified about new posts.</p>
+                            <form class="newsletter-form" action="#" method="post">
+                                <input type="email" placeholder="Your email" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Mohammed Haneef</h3>
+                    <p>Your brief tagline or mission statement.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="GitHub">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mohammed Haneef. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

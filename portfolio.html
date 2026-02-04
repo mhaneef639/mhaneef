@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio - View the work and projects of Mohammed Haneef.">
+    <title>Portfolio | Mohammed Haneef</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">MH</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                <li><a href="blog/index.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Portfolio</h1>
+                <p>A showcase of my work and projects.</p>
+            </div>
+        </section>
+
+        <section class="portfolio-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="category1">Category 1</button>
+                    <button class="filter-btn" data-filter="category2">Category 2</button>
+                    <button class="filter-btn" data-filter="category3">Category 3</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-gallery">
+            <div class="container">
+                <div class="portfolio-grid">
+                    <!-- Portfolio Item 1 -->
+                    <article class="portfolio-item" data-category="category1">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-placeholder">
+                                <!-- Replace with: <img src="assets/images/portfolio/project-1.jpg" alt="Project Title"> -->
+                                <span>Project 1</span>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>Project Title</h3>
+                                    <p>Category 1</p>
+                                    <a href="portfolio/project-1.html" class="btn btn-small">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Portfolio Item 2 -->
+                    <article class="portfolio-item" data-category="category2">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-placeholder">
+                                <span>Project 2</span>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>Project Title</h3>
+                                    <p>Category 2</p>
+                                    <a href="#" class="btn btn-small">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Portfolio Item 3 -->
+                    <article class="portfolio-item" data-category="category1">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-placeholder">
+                                <span>Project 3</span>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>Project Title</h3>
+                                    <p>Category 1</p>
+                                    <a href="#" class="btn btn-small">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Portfolio Item 4 -->
+                    <article class="portfolio-item" data-category="category3">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-placeholder">
+                                <span>Project 4</span>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>Project Title</h3>
+                                    <p>Category 3</p>
+                                    <a href="#" class="btn btn-small">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Portfolio Item 5 -->
+                    <article class="portfolio-item" data-category="category2">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-placeholder">
+                                <span>Project 5</span>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>Project Title</h3>
+                                    <p>Category 2</p>
+                                    <a href="#" class="btn btn-small">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Portfolio Item 6 -->
+                    <article class="portfolio-item" data-category="category3">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-placeholder">
+                                <span>Project 6</span>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>Project Title</h3>
+                                    <p>Category 3</p>
+                                    <a href="#" class="btn btn-small">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Like What You See?</h2>
+                <p>Let's discuss how I can help bring your project to life.</p>
+                <a href="contact.html" class="btn btn-primary">Start a Project</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Mohammed Haneef</h3>
+                    <p>Your brief tagline or mission statement.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="GitHub">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mohammed Haneef. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
