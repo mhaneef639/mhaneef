@@ -92,6 +92,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Prevent background scroll when mobile menu is open */
+body.nav-open {
+    overflow: hidden;
+}
+
+
 img {
     max-width: 100%;
     height: auto;
@@ -311,11 +317,16 @@ p {
         right: 0;
         bottom: 0;
         flex-direction: column;
-        background-color: var(--color-bg);
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         padding: var(--spacing-xl);
         gap: var(--spacing-lg);
         transform: translateX(100%);
         transition: transform var(--transition-base);
+        z-index: 1100;
+        border-top: 1px solid var(--color-border);
+        box-shadow: var(--shadow-lg);
     }
 
     .nav-menu.active {

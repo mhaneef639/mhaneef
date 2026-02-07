@@ -27,6 +27,9 @@ function initMobileNav() {
         // Toggle aria-expanded for accessibility
         const isExpanded = navMenu.classList.contains('active');
         navToggle.setAttribute('aria-expanded', isExpanded);
+
+        // Lock body scroll when menu is open
+        document.body.classList.toggle('nav-open', isExpanded);
     });
 
     // Close menu when clicking a link
@@ -34,6 +37,7 @@ function initMobileNav() {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
         });
     });
 
@@ -42,6 +46,7 @@ function initMobileNav() {
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
         }
     });
 }
