@@ -1753,6 +1753,13 @@ section h2 {
     color: var(--color-primary-dark);
 }
 
+/* Testimonial author line (avoid low-contrast white on warm backgrounds) */
+.testimonial-author {
+    margin-top: 10px;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
 .social-connect h3 {
     margin-bottom: var(--spacing-md);
 }
