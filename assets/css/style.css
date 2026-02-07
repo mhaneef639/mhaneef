@@ -3,23 +3,23 @@
    =================================== */
 
 :root {
-    /* Colors - Modern Minimal */
-    --color-primary: #2563eb;
-    --color-primary-dark: #1d4ed8;
-    --color-primary-light: #3b82f6;
-    --color-secondary: #64748b;
-    --color-accent: #0ea5e9;
+    /* Colors - Warm Minimal (photo-friendly) */
+    --color-primary: #1F3A3D;          /* deep slate/teal */
+    --color-primary-dark: #162B2D;
+    --color-primary-light: #2F4E52;
+    --color-secondary: #6B7280;        /* warm-neutral gray */
+    --color-accent: #C4A46A;           /* sand */
 
-    --color-text: #1e293b;
-    --color-text-light: #64748b;
-    --color-text-muted: #94a3b8;
+    --color-text: #1f2937;             /* warmer charcoal */
+    --color-text-light: #6b7280;
+    --color-text-muted: #9ca3af;
 
     --color-bg: #ffffff;
-    --color-bg-alt: #f8fafc;
-    --color-bg-dark: #f1f5f9;
+    --color-bg-alt: #FBF7F0;           /* warm off-white */
+    --color-bg-dark: #F3EEE5;          /* warm light panel */
 
-    --color-border: #e2e8f0;
-    --color-border-light: #f1f5f9;
+    --color-border: #E6DED2;           /* warm border */
+    --color-border-light: #F3EEE5;
 
     --color-success: #10b981;
     --color-error: #ef4444;
@@ -332,7 +332,7 @@ p {
    =================================== */
 
 .hero {
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     padding: var(--spacing-4xl) var(--spacing-lg);
@@ -401,9 +401,11 @@ p {
 
 @media (max-width: 968px) {
     .hero {
+        min-height: auto;
         flex-direction: column-reverse;
         text-align: center;
         padding-top: calc(var(--spacing-3xl) + 60px);
+        padding-bottom: var(--spacing-3xl);
     }
 
     .hero-title {
@@ -456,6 +458,21 @@ section {
 section h2 {
     text-align: center;
     margin-bottom: var(--spacing-3xl);
+}
+
+/* Slightly tighter vertical rhythm on mobile (reduce empty space, keep calm) */
+@media (max-width: 768px) {
+    section {
+        padding: var(--spacing-3xl) var(--spacing-lg);
+    }
+
+    section h2 {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .page-header {
+        padding: calc(var(--spacing-3xl) + 60px) var(--spacing-lg) var(--spacing-2xl);
+    }
 }
 
 /* Intro Section */
@@ -1722,6 +1739,25 @@ section h2 {
 .contact-item p,
 .contact-item a {
     color: var(--color-text-light);
+}
+
+/* Make email feel intentional + readable */
+.contact-item a {
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.contact-item a:hover {
+    color: var(--color-primary-dark);
+}
+
+/* Testimonial author line (avoid low-contrast white on warm backgrounds) */
+.testimonial-author {
+    margin-top: 10px;
+    color: var(--color-accent);
+    font-weight: 600;
 }
 
 .social-connect h3 {
