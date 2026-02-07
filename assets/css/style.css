@@ -849,6 +849,10 @@ section h2 {
 .process-step {
     text-align: center;
     padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
 .step-number {
@@ -861,11 +865,23 @@ section h2 {
 
 .process-step h3 {
     margin-bottom: var(--spacing-sm);
+    /* Keep headings visually aligned even when one wraps */
+    min-height: 2.6em;
 }
 
 .process-step p {
     color: var(--color-text-light);
     margin-bottom: 0;
+}
+
+.process-step .step-desc {
+    /* Reserve space so buttons line up */
+    min-height: 3.2em;
+}
+
+.process-step .step-cta {
+    margin-top: auto;
+    padding-top: var(--spacing-md);
 }
 
 @media (max-width: 768px) {
