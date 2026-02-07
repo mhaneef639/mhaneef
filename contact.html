@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with Mohammed Haneef - Contact form and details.">
+    <meta name="description" content="Contact Mohammed Haneef — book an advisory session or reach out by email.">
     <title>Contact | Mohammed Haneef</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,14 +43,15 @@
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h2>Let's Connect</h2>
-                        <p>Whether you have a project in mind, a question, or just want to say hello, I'm here to help. Fill out the form or reach out directly.</p>
+                        <p>If you want to work together, the best next step is to book an Advisory Session. If you have a quick question, email me directly.</p>
+                        <p style="margin-top: 10px; color: rgba(255,255,255,0.72); font-size: 0.95rem;">Boundary: This is not medical, legal, or financial advice.</p>
 
                         <div class="contact-details">
                             <div class="contact-item">
                                 <span class="contact-icon">📧</span>
                                 <div>
                                     <h3>Email</h3>
-                                    <a href="mailto:your.email@example.com">your.email@example.com</a>
+                                    <a href="mailto:mhaneef@cosmicleague.net">mhaneef@cosmicleague.net</a>
                                 </div>
                             </div>
 
@@ -58,7 +59,7 @@
                                 <span class="contact-icon">📍</span>
                                 <div>
                                     <h3>Location</h3>
-                                    <p>Your City, Country</p>
+                                    <p>Jeddah, Saudi Arabia</p>
                                 </div>
                             </div>
 
@@ -66,7 +67,7 @@
                                 <span class="contact-icon">⏰</span>
                                 <div>
                                     <h3>Response Time</h3>
-                                    <p>Usually within 24 hours</p>
+                                    <p>Usually within 24 hours (Timezone: Asia/Riyadh)</p>
                                 </div>
                             </div>
                         </div>
@@ -74,119 +75,49 @@
                         <div class="social-connect">
                             <h3>Follow Me</h3>
                             <div class="social-links-large">
-                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                <a href="https://www.linkedin.com/in/mhhaneef/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                                     <span>LinkedIn</span>
                                 </a>
-                                <a href="#" class="social-link" aria-label="Twitter">
-                                    <span>Twitter</span>
+                                <a href="https://x.com/mhaneef639" class="social-link" aria-label="X" target="_blank" rel="noopener noreferrer">
+                                    <span>X</span>
                                 </a>
-                                <a href="#" class="social-link" aria-label="GitHub">
-                                    <span>GitHub</span>
-                                </a>
-                                <a href="#" class="social-link" aria-label="Instagram">
+                                <a href="https://www.instagram.com/mhaneef639/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                                     <span>Instagram</span>
                                 </a>
                             </div>
                         </div>
+
+                        <div class="services-intro" style="margin-top: 26px;">
+                            <h3>Get updates</h3>
+                            <p style="margin-top: 8px; color: rgba(255,255,255,0.78);">Occasional updates on systems, performance, and creative work. No spam.</p>
+                            <div class="contact-form-wrapper" style="margin-top: 12px;">
+                                <form class="contact-form" onsubmit="return subscribeUpdates(event)">
+                                    <div class="form-group">
+                                        <label for="updates-email">Email *</label>
+                                        <input type="email" id="updates-email" name="updates-email" required placeholder="you@example.com">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-full">Subscribe</button>
+                                    <div class="form-status" id="updates-status"></div>
+                                </form>
+                            </div>
+                            <p style="margin-top: 10px; color: rgba(255,255,255,0.65); font-size: 0.95rem;">Submitting opens an email to <strong>mhaneef@cosmicleague.net</strong> (simple for now; automation later).</p>
+                        </div>
                     </div>
 
-                    <div class="contact-form-wrapper">
-                        <form class="contact-form" id="contact-form" action="#" method="post">
-                            <!--
-                            FORM HANDLING OPTIONS:
-
-                            Option 1: Formspree (Recommended - Free tier available)
-                            1. Go to formspree.io and create account
-                            2. Create a new form
-                            3. Replace action="#" with action="https://formspree.io/f/YOUR_FORM_ID"
-                            4. Remove the JavaScript form handler if using Formspree
-
-                            Option 2: Netlify Forms (if hosting on Netlify)
-                            1. Add netlify attribute to form: <form netlify name="contact">
-                            2. Forms are automatically handled
-
-                            Option 3: Custom JavaScript (current setup)
-                            - The form uses JavaScript to validate and show a success message
-                            - You'll need a backend or service to actually receive emails
-                            -->
-
-                            <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" id="name" name="name" required placeholder="Your full name">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" placeholder="What's this about?">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="project-type">Project Type</label>
-                                <select id="project-type" name="project-type">
-                                    <option value="">Select an option</option>
-                                    <option value="consultation">Consultation</option>
-                                    <option value="project">New Project</option>
-                                    <option value="collaboration">Collaboration</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or question..."></textarea>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="newsletter">
-                                    <span>Subscribe to my newsletter for updates and insights</span>
-                                </label>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-
-                            <div class="form-status" id="form-status"></div>
-                        </form>
-                    </div>
+                    <!-- Contact form removed (GitHub Pages site; email + booking is the primary path). -->
                 </div>
             </div>
         </section>
 
         <section class="booking-cta">
             <div class="container">
-                <h2>Prefer to Schedule a Call?</h2>
-                <p>Book a free consultation to discuss your project in detail.</p>
-                <a href="services.html#booking" class="btn btn-secondary">Schedule a Call</a>
+                <h2>Prefer to Schedule?</h2>
+                <p>Book an Advisory Session ($50) and we’ll get clarity and next steps.</p>
+                <a href="services.html#booking" class="btn btn-secondary">Book an Advisory Session</a>
             </div>
         </section>
 
-        <section class="map-section">
-            <div class="container">
-                <h2>Where I'm Based</h2>
-                <div class="map-placeholder">
-                    <!--
-                    To add a Google Map:
-                    1. Go to Google Maps
-                    2. Search for your location
-                    3. Click Share > Embed a map
-                    4. Copy the iframe code and paste it here
-
-                    Example:
-                    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    -->
-                    <div class="placeholder-content">
-                        <p>Map Placeholder</p>
-                        <p>Add your Google Maps embed code here</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+</main>
 
     <footer class="footer">
         <div class="container">
@@ -220,5 +151,24 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+        function subscribeUpdates(e) {
+            e.preventDefault();
+            const input = document.getElementById('updates-email');
+            const status = document.getElementById('updates-status');
+            const email = (input && input.value || '').trim();
+            if (!email) {
+                status.textContent = 'Please enter your email.';
+                return false;
+            }
+            const to = 'mhaneef@cosmicleague.net';
+            const subject = encodeURIComponent('Subscribe for updates');
+            const body = encodeURIComponent('Hi Mohammed,\n\nPlease add me to your updates list.\n\nEmail: ' + email + '\n');
+            window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+            status.textContent = 'Opening your email app…';
+            return false;
+        }
+    </script>
 </body>
 </html>
