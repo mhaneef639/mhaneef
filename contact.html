@@ -48,14 +48,6 @@
 
                         <div class="contact-details">
                             <div class="contact-item">
-                                <span class="contact-icon">📧</span>
-                                <div>
-                                    <h3>Email</h3>
-                                    <a href="mailto:mhaneef@cosmicleague.net">mhaneef@cosmicleague.net</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
                                 <span class="contact-icon">📍</span>
                                 <div>
                                     <h3>Location</h3>
@@ -87,22 +79,7 @@
                             </div>
                         </div>
 
-                        <div class="services-intro" style="margin-top: 26px;">
-                            <h3>Get updates</h3>
-                            <p style="margin-top: 8px; color: rgba(255,255,255,0.78);">Occasional updates on systems, performance, and creative work. No spam.</p>
-                            <div class="contact-form-wrapper" style="margin-top: 12px;">
-                                <form class="contact-form" onsubmit="return subscribeUpdates(event)">
-                                    <div class="form-group">
-                                        <label for="updates-email">Email *</label>
-                                        <input type="email" id="updates-email" name="updates-email" required placeholder="you@example.com">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-full">Subscribe</button>
-                                    <div class="form-status" id="updates-status"></div>
-                                </form>
-                            </div>
-                            <p style="margin-top: 10px; color: rgba(255,255,255,0.65); font-size: 0.95rem;">Submitting opens an email to <strong>mhaneef@cosmicleague.net</strong> (simple for now; automation later).</p>
-                        </div>
-                    </div>
+                        
 
                     <!-- Contact form removed (GitHub Pages site; email + booking is the primary path). -->
                 </div>
@@ -151,24 +128,5 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-
-    <script>
-        function subscribeUpdates(e) {
-            e.preventDefault();
-            const input = document.getElementById('updates-email');
-            const status = document.getElementById('updates-status');
-            const email = (input && input.value || '').trim();
-            if (!email) {
-                status.textContent = 'Please enter your email.';
-                return false;
-            }
-            const to = 'mhaneef@cosmicleague.net';
-            const subject = encodeURIComponent('Subscribe for updates');
-            const body = encodeURIComponent('Hi Mohammed,\n\nPlease add me to your updates list.\n\nEmail: ' + email + '\n');
-            window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-            status.textContent = 'Opening your email app…';
-            return false;
-        }
-    </script>
 </body>
 </html>
