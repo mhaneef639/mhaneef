@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clarity Session — Intake Form | Mohammed Haneef</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF8;
+    --bg-card: #FFFFFF;
+    --text: #1A1A18;
+    --text-soft: #6B6B66;
+    --text-muted: #A3A39E;
+    --accent: #2C5F4B;
+    --accent-light: #E8F0EC;
+    --accent-hover: #1E4435;
+    --border: #E8E8E4;
+    --border-focus: #2C5F4B;
+    --error: #B84233;
+    --error-bg: #FDF0EE;
+    --shadow-sm: 0 1px 3px rgba(26,26,24,0.04);
+    --shadow-md: 0 4px 20px rgba(26,26,24,0.06);
+    --radius: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Topbar ── */
+  .topbar {
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .topbar-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  .topbar-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  /* ── Container ── */
+  .container {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── Header ── */
+  .form-header {
+    text-align: center;
+    padding: 24px 0 48px;
+  }
+  .form-header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 5vw, 38px);
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .form-header p {
+    color: var(--text-soft);
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── Progress ── */
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 40px;
+    padding: 0 4px;
+  }
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    background: var(--border);
+    border-radius: 3px;
+    transition: background 0.5s ease;
+  }
+  .progress-segment.active {
+    background: var(--accent);
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 0 4px;
+  }
+  .progress-label span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .progress-label .current-step {
+    color: var(--accent);
+  }
+
+  /* ── Step Panels ── */
+  .step {
+    display: none;
+    animation: fadeUp 0.4s ease;
+  }
+  .step.active {
+    display: block;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .step-intro {
+    margin-bottom: 32px;
+  }
+  .step-intro h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+  .step-intro p {
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── Form Elements ── */
+  .field {
+    margin-bottom: 24px;
+  }
+  .field:last-child {
+    margin-bottom: 0;
+  }
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 7px;
+    color: var(--text);
+    letter-spacing: 0.1px;
+  }
+  .field label .optional {
+    color: var(--text-muted);
+    font-weight: 300;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+  .field .hint {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text);
+    background: var(--bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(44,95,75,0.08);
+  }
+  input::placeholder, textarea::placeholder {
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+  }
+
+  select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A3A39E' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  /* ── Radio / Choice Cards ── */
+  .choice-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .choice-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--bg);
+  }
+  .choice-card:hover {
+    border-color: #CCC;
+  }
+  .choice-card.selected {
+    border-color: var(--accent);
+    background: var(--accent-light);
+  }
+  .choice-card input[type="radio"] {
+    display: none;
+  }
+  .choice-radio {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    margin-top: 1px;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  .choice-card.selected .choice-radio {
+    border-color: var(--accent);
+  }
+  .choice-card.selected .choice-radio::after {
+    content: '';
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .choice-text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--text);
+  }
+  .choice-text .choice-label {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .choice-text .choice-desc {
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--text-soft);
+    margin-top: 2px;
+  }
+
+  /* ── Row layout ── */
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 520px) {
+    .row { grid-template-columns: 1fr; }
+  }
+
+  /* ── Navigation ── */
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    gap: 12px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    letter-spacing: 0.2px;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(44,95,75,0.18);
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 4px 14px rgba(44,95,75,0.25);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-soft);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover {
+    color: var(--text);
+    border-color: #CCC;
+  }
+  .btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  .btn-submit {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+
+  .btn svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* ── Validation ── */
+  .field.error input,
+  .field.error textarea,
+  .field.error select {
+    border-color: var(--error);
+  }
+  .field .error-msg {
+    display: none;
+    font-size: 12px;
+    color: var(--error);
+    margin-top: 5px;
+  }
+  .field.error .error-msg {
+    display: block;
+  }
+
+  /* ── Confirmation ── */
+  .confirmation {
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .confirmation-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+  }
+  .confirmation-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--accent);
+  }
+  .confirmation h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+  .confirmation p {
+    color: var(--text-soft);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .confirmation .next-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 32px;
+    padding: 12px 28px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .confirmation .next-link:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+  }
+
+  /* ── Privacy note ── */
+  .privacy-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+  .privacy-note svg {
+    width: 12px;
+    height: 12px;
+    vertical-align: -1px;
+    margin-right: 3px;
+    stroke: var(--text-muted);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 520px) {
+    .card { padding: 28px 20px; }
+    .topbar { padding: 16px 20px; }
+    .container { padding: 0 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <a href="index.html" class="topbar-logo">MH</a>
+  <span class="topbar-label">Intake Form</span>
+</div>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="form-header">
+    <h1>Before we talk, help me listen better.</h1>
+    <p>Fill this out before your Clarity Session so we can skip the background and go straight to what matters.</p>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-label">
+    <span class="current-step" id="stepLabel">Step 1 of 4</span>
+    <span id="stepName">You</span>
+  </div>
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-segment active"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+  </div>
+
+  <!-- ═══════ STEP 1: About You ═══════ -->
+  <div class="step active" id="step1">
+    <div class="card">
+      <div class="step-intro">
+        <h2>About you</h2>
+        <p>The basics, so I know who I'm speaking with.</p>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="firstName">First name</label>
+          <input type="text" id="firstName" placeholder="Mohammed" required>
+          <div class="error-msg">Please enter your first name</div>
+        </div>
+        <div class="field">
+          <label for="lastName">Last name</label>
+          <input type="text" id="lastName" placeholder="Haneef" required>
+          <div class="error-msg">Please enter your last name</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
+        <div class="error-msg">Please enter a valid email</div>
+      </div>
+
+      <div class="field">
+        <label for="role">What best describes you?</label>
+        <select id="role" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="founder">Founder / Entrepreneur</option>
+          <option value="creative">Creative / Artist / Designer</option>
+          <option value="professional">Professional (corporate / employed)</option>
+          <option value="freelancer">Freelancer / Independent</option>
+          <option value="career-transition">In a career transition</option>
+          <option value="other">Something else</option>
+        </select>
+        <div class="error-msg">Please select an option</div>
+      </div>
+
+      <div class="field">
+        <label for="context">Brief context <span class="optional">— one or two lines</span></label>
+        <input type="text" id="context" placeholder="e.g. Running a SaaS startup, 6 months in, 2-person team">
+        <p class="hint">Your role, company, or situation — whatever helps me understand your world quickly.</p>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <div></div>
+      <button class="btn btn-primary" onclick="nextStep(1)">
+        Continue
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════ STEP 2: The Situation ═══════ -->
+  <div class="step" id="step2">
+    <div class="card">
+      <div class="step-intro">
+        <h2>What needs clarity</h2>
+        <p>Tell me what's on your mind. No need to have it figured out — that's what the session is for.</p>
+      </div>
+
+      <div class="field">
+        <label for="mainQuestion">What's the decision or question you're stuck on?</label>
+        <textarea id="mainQuestion" placeholder="e.g. I don't know whether to keep building this product or pivot to something with faster revenue. I've been going back and forth for weeks." required></textarea>
+        <p class="hint">Be as honest and messy as you need. This stays between us.</p>
+        <div class="error-msg">This is the most important question — please share what's on your mind</div>
+      </div>
+
+      <div class="field">
+        <label for="tried">What have you already tried or considered?</label>
+        <textarea id="tried" placeholder="e.g. I made a pros/cons list, talked to two advisors, but I keep second-guessing..."></textarea>
+        <p class="hint">Helps me understand what hasn't worked so we don't repeat it.</p>
+      </div>
+
+      <div class="field">
+        <label for="stuckWhy">What makes this hard to decide on your own? <span class="optional">optional</span></label>
+        <textarea id="stuckWhy" placeholder="e.g. Too many variables. Emotional attachment. Fear of making the wrong choice." style="min-height: 80px;"></textarea>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn btn-secondary" onclick="prevStep(2)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back
+      </button>
+      <button class="btn btn-primary" onclick="nextStep(2)">
+        Continue
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════ STEP 3: Desired Outcome ═══════ -->
+  <div class="step" id="step3">
+    <div class="card">
+      <div class="step-intro">
+        <h2>What "clarity" looks like for you</h2>
+        <p>So I can aim the session where it'll help you most.</p>
+      </div>
+
+      <div class="field">
+        <label>What would make this session a win? Pick the closest.</label>
+        <div class="choice-group" id="outcomeGroup">
+          <label class="choice-card" onclick="selectChoice(this, 'outcomeGroup')">
+            <input type="radio" name="outcome" value="decision" required>
+            <span class="choice-radio"></span>
+            <span class="choice-text">
+              <span class="choice-label">A clear decision</span>
+              <span class="choice-desc">I want to walk away knowing what I'm doing — and commit to it.</span>
+            </span>
+          </label>
+          <label class="choice-card" onclick="selectChoice(this, 'outcomeGroup')">
+            <input type="radio" name="outcome" value="direction">
+            <span class="choice-radio"></span>
+            <span class="choice-text">
+              <span class="choice-label">A direction to explore</span>
+              <span class="choice-desc">I don't need a final answer, but I need to narrow down and move.</span>
+            </span>
+          </label>
+          <label class="choice-card" onclick="selectChoice(this, 'outcomeGroup')">
+            <input type="radio" name="outcome" value="unblock">
+            <span class="choice-radio"></span>
+            <span class="choice-text">
+              <span class="choice-label">Get unblocked</span>
+              <span class="choice-desc">I know what to do, but something is stopping me. I need a push or a reframe.</span>
+            </span>
+          </label>
+          <label class="choice-card" onclick="selectChoice(this, 'outcomeGroup')">
+            <input type="radio" name="outcome" value="plan">
+            <span class="choice-radio"></span>
+            <span class="choice-text">
+              <span class="choice-label">A concrete plan</span>
+              <span class="choice-desc">I need someone to help me break it down into steps I can actually take this week.</span>
+            </span>
+          </label>
+        </div>
+        <div class="error-msg" id="outcomeError" style="display:none;">Please select what would make this session a win</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="field">
+        <label>How urgent does this feel?</label>
+        <div class="choice-group" id="urgencyGroup">
+          <label class="choice-card" onclick="selectChoice(this, 'urgencyGroup')">
+            <input type="radio" name="urgency" value="burning">
+            <span class="choice-radio"></span>
+            <span class="choice-text">
+              <span class="choice-label">Burning — I need to move this week</span>
+            </span>
+          </label>
+          <label class="choice-card" onclick="selectChoice(this, 'urgencyGroup')">
+            <input type="radio" name="urgency" value="simmering">
+            <span class="choice-radio"></span>
+            <span class="choice-text">
+              <span class="choice-label">Simmering — it's weighing on me, but not urgent</span>
+            </span>
+          </label>
+          <label class="choice-card" onclick="selectChoice(this, 'urgencyGroup')">
+            <input type="radio" name="urgency" value="strategic">
+            <span class="choice-radio"></span>
+            <span class="choice-text">
+              <span class="choice-label">Strategic — I'm thinking ahead, planning my next phase</span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn btn-secondary" onclick="prevStep(3)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back
+      </button>
+      <button class="btn btn-primary" onclick="nextStep(3)">
+        Continue
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════ STEP 4: Final ═══════ -->
+  <div class="step" id="step4">
+    <div class="card">
+      <div class="step-intro">
+        <h2>Almost there</h2>
+        <p>A couple more things so we can make the most of our 30 minutes.</p>
+      </div>
+
+      <div class="field">
+        <label for="anything">Anything else I should know going in? <span class="optional">optional</span></label>
+        <textarea id="anything" placeholder="Context, constraints, fears, past attempts — whatever would help me help you faster." style="min-height: 90px;"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="referral">How did you find me? <span class="optional">optional</span></label>
+        <select id="referral">
+          <option value="" disabled selected>Select one</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="instagram">Instagram</option>
+          <option value="x-twitter">X / Twitter</option>
+          <option value="referral">Someone referred me</option>
+          <option value="portfolio">Saw your portfolio / work</option>
+          <option value="search">Google / search</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <hr class="divider">
+
+      <div class="field" style="margin-bottom: 0;">
+        <label style="font-size: 14px; font-weight: 400; color: var(--text-soft); line-height: 1.6;">
+          By submitting, you confirm you've booked (or plan to book) a Clarity Session and understand this is a focused 30-minute call — not ongoing coaching. Your responses help me prepare and stay confidential.
+        </label>
+      </div>
+    </div>
+
+    <div class="nav-buttons" style="flex-direction: column; gap: 16px;">
+      <button class="btn btn-primary btn-submit" onclick="submitForm()">
+        Submit & prepare for clarity
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="btn btn-secondary" onclick="prevStep(4)" style="align-self: center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back
+      </button>
+    </div>
+
+    <p class="privacy-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Your answers are private and only used to prepare for your session.
+    </p>
+  </div>
+
+  <!-- ═══════ CONFIRMATION ═══════ -->
+  <div class="step" id="stepConfirm">
+    <div class="card">
+      <div class="confirmation">
+        <div class="confirmation-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h2>You're all set.</h2>
+        <p>I've got everything I need to prepare. When we get on the call, we'll skip the small talk and go straight to what matters.</p>
+        <a href="https://calendly.com/dr-haneefmo/30min" class="next-link" target="_blank">
+          Book your session
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 4;
+  const stepNames = ['You', 'The situation', 'Desired outcome', 'Final details'];
+
+  function updateProgress() {
+    const segments = document.querySelectorAll('.progress-segment');
+    segments.forEach((seg, i) => {
+      seg.classList.toggle('active', i < currentStep);
+    });
+    document.getElementById('stepLabel').textContent = `Step ${currentStep} of ${totalSteps}`;
+    document.getElementById('stepName').textContent = stepNames[currentStep - 1] || '';
+  }
+
+  function showStep(n) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    if (n > totalSteps) {
+      document.getElementById('stepConfirm').classList.add('active');
+      document.querySelector('.progress-label').style.display = 'none';
+      document.querySelector('.progress-bar').style.display = 'none';
+    } else {
+      document.getElementById(`step${n}`).classList.add('active');
+    }
+    currentStep = n;
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(n) {
+    let valid = true;
+
+    if (n === 1) {
+      ['firstName', 'lastName', 'email', 'role'].forEach(id => {
+        const field = document.getElementById(id);
+        const wrapper = field.closest('.field');
+        if (!field.value.trim() || (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value))) {
+          wrapper.classList.add('error');
+          valid = false;
+        } else {
+          wrapper.classList.remove('error');
+        }
+      });
+    }
+
+    if (n === 2) {
+      const q = document.getElementById('mainQuestion');
+      const w = q.closest('.field');
+      if (!q.value.trim()) {
+        w.classList.add('error');
+        valid = false;
+      } else {
+        w.classList.remove('error');
+      }
+    }
+
+    if (n === 3) {
+      const checked = document.querySelector('input[name="outcome"]:checked');
+      const errEl = document.getElementById('outcomeError');
+      if (!checked) {
+        errEl.style.display = 'block';
+        valid = false;
+      } else {
+        errEl.style.display = 'none';
+      }
+    }
+
+    return valid;
+  }
+
+  function nextStep(from) {
+    if (validateStep(from)) {
+      showStep(from + 1);
+    }
+  }
+
+  function prevStep(from) {
+    showStep(from - 1);
+  }
+
+  function selectChoice(card, groupId) {
+    const group = card.closest('.choice-group');
+    group.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    card.querySelector('input[type="radio"]').checked = true;
+  }
+
+  async function submitForm() {
+    // Collect form data
+    const data = {
+      firstName:    document.getElementById('firstName').value,
+      lastName:     document.getElementById('lastName').value,
+      email:        document.getElementById('email').value,
+      role:         document.getElementById('role').value,
+      context:      document.getElementById('context').value,
+      mainQuestion: document.getElementById('mainQuestion').value,
+      tried:        document.getElementById('tried').value,
+      stuckWhy:     document.getElementById('stuckWhy').value,
+      outcome:      document.querySelector('input[name="outcome"]:checked')?.value || '',
+      urgency:      document.querySelector('input[name="urgency"]:checked')?.value || '',
+      anything:     document.getElementById('anything').value,
+      referral:     document.getElementById('referral').value,
+      submittedAt:  new Date().toISOString()
+    };
+
+    try {
+      const res = await fetch("https://clarity-intake.dr-haneefmo.workers.dev", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) throw new Error(`Backend error: ${res.status}`);
+
+      showStep(totalSteps + 1);
+    } catch (err) {
+      console.error(err);
+      alert("Sorry — something failed while submitting your intake. Please try again, or email me if it keeps failing.");
+    }
+  }
+
+  // Clear error state on input
+  document.querySelectorAll('input, textarea, select').forEach(el => {
+    el.addEventListener('input', () => {
+      el.closest('.field')?.classList.remove('error');
+    });
+  });
+</script>
+</body>
+</html>
