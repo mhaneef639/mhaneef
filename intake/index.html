@@ -838,6 +838,24 @@
     card.querySelector('input[type="radio"]').checked = true;
   }
 
+  function getAttribution() {
+    const params = new URLSearchParams(window.location.search);
+    const get = (k) => {
+      const v = params.get(k);
+      return v && v.trim() ? v.trim() : "";
+    };
+
+    return {
+      utm_source: get("utm_source"),
+      utm_medium: get("utm_medium"),
+      utm_campaign: get("utm_campaign"),
+      utm_content: get("utm_content"),
+      utm_term: get("utm_term"),
+      landing_url: window.location.href,
+      referrer: document.referrer || ""
+    };
+  }
+
   async function submitForm() {
     // Collect form data
     const data = {
@@ -853,7 +871,8 @@
       urgency:      document.querySelector('input[name="urgency"]:checked')?.value || '',
       anything:     document.getElementById('anything').value,
       referral:     document.getElementById('referral').value,
-      submittedAt:  new Date().toISOString()
+      submittedAt:  new Date().toISOString(),
+      ...getAttribution()
     };
 
     try {
