@@ -811,6 +811,11 @@ section h2 {
     margin-bottom: var(--spacing-xl);
 }
 
+/* Portfolio testimonial cards: keep thumbnail vertically centered */
+.service-card-large.testimonial-card {
+    align-items: center;
+}
+
 .service-icon {
     font-size: var(--font-size-5xl);
     flex-shrink: 0;
