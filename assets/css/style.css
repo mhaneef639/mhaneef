@@ -1859,6 +1859,13 @@ section h2 {
     font-size: 0.95rem;
 }
 
+/* Portfolio testimonial intro paragraphs: consistent spacing/contrast */
+.testimonial-intro {
+    margin-top: 10px;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
 @media (max-width: 900px) {
     .testimonials-grid {
         grid-template-columns: 1fr;
