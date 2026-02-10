@@ -1866,6 +1866,23 @@ section h2 {
     margin-bottom: 0;
 }
 
+/* Arabic quotes should render RTL and align cleanly */
+.quote-ar {
+    direction: rtl;
+    unicode-bidi: plaintext;
+    text-align: right;
+    letter-spacing: 0;
+}
+
+.quote-ar-attrib {
+    margin-top: 10px;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    direction: rtl;
+    unicode-bidi: plaintext;
+    text-align: right;
+}
+
 @media (max-width: 900px) {
     .testimonials-grid {
         grid-template-columns: 1fr;
