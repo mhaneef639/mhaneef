@@ -836,6 +836,15 @@ section h2 {
     .service-card-large.testimonial-card .service-features li {
         padding: 6px 0;
     }
+
+    .service-card-large.testimonial-card .btn,
+    .service-card-large.testimonial-card .btn + .btn {
+        margin-left: 0;
+    }
+
+    .service-card-large.testimonial-card div[style*="display: flex"] {
+        justify-content: center;
+    }
 }
 
 .service-icon {
