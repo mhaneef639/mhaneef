@@ -816,6 +816,18 @@ section h2 {
     align-items: flex-start;
 }
 
+/* English paragraphs: justify for a cleaner block feel */
+.service-card-large.testimonial-card .service-description {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Keep Arabic blocks RTL/right-aligned (override justify) */
+.service-card-large.testimonial-card .quote-ar,
+.service-card-large.testimonial-card .quote-ar-attrib {
+    text-align: right;
+}
+
 /* On mobile, center the thumbnail above the text */
 @media (max-width: 768px) {
     .service-card-large.testimonial-card {
@@ -826,6 +838,17 @@ section h2 {
 
     .service-card-large.testimonial-card .service-details {
         text-align: center;
+    }
+
+    /* On narrow screens, keep headings/buttons centered but justify the body paragraphs */
+    .service-card-large.testimonial-card .service-description {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .service-card-large.testimonial-card .quote-ar,
+    .service-card-large.testimonial-card .quote-ar-attrib {
+        text-align: right;
     }
 
     .service-card-large.testimonial-card .service-features {
