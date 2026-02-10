@@ -1831,6 +1831,44 @@ section h2 {
     font-weight: 600;
 }
 
+/* Home/Services: compact testimonial strip */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.testimonial-mini {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.testimonial-mini-quote {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.testimonial-mini-author {
+    margin-top: 10px;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-mini {
+        align-items: center;
+    }
+}
+
 .social-connect h3 {
     margin-bottom: var(--spacing-md);
 }
