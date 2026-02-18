@@ -1,0 +1,24 @@
+title: Mohammed Haneef
+url: "https://mhaneef639.github.io"
+baseurl: "/mhaneef"
+
+# Keep current public URLs stable
+permalink: pretty
+
+collections:
+  posts:
+    output: true
+    permalink: /blog/posts/:title.html
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+  - Gemfile.lock

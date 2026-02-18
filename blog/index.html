@@ -1,151 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog - Thoughts, insights, and daily posts by Mohammed Haneef.">
-    <title>Blog | Mohammed Haneef</title>
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Blog | Mohammed Haneef" />
-    <meta property="og:description" content="Thoughts, insights, and daily posts by Mohammed Haneef." />
-    <meta property="og:image" content="https://mhaneef639.github.io/mhaneef/assets/images/profile.jpg" />
-    <meta property="og:url" content="https://mhaneef639.github.io/mhaneef/blog/index.html" />
-    <meta property="og:type" content="website" />
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Blog | Mohammed Haneef" />
-    <meta name="twitter:description" content="Thoughts, insights, and daily posts by Mohammed Haneef." />
-    <meta name="twitter:image" content="https://mhaneef639.github.io/mhaneef/assets/images/profile.jpg" />
-    <link rel="stylesheet" href="../assets/css/style.css?v=navfix2-20260207">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">MH</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="../about.html" class="nav-link">About</a></li>
-                <li><a href="../services.html" class="nav-link">Services</a></li>
-                <li><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="index.html" class="nav-link active">Blog</a></li>
-                <li><a href="../contact.html" class="nav-link">Contact</a></li>
-            </ul>
+---
+layout: default
+title: Blog
+nav: blog
+description: "Thoughts, insights, and reflections by Mohammed Haneef."
+og_type: website
+og_title: "Blog"
+og_description: "Thoughts, insights, and reflections."
+og_image: "https://mhaneef639.github.io/mhaneef/assets/images/profile.jpg"
+---
+<section class="page-header">
+  <div class="container">
+    <h1>Blog</h1>
+    <p>Thoughts, insights, and reflections.</p>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="container">
+    <div class="blog-layout">
+      <div class="blog-main">
+        <div class="services-intro">
+          <h2>Latest</h2>
+          <p>Short posts on clarity, decisions, and building a workable structure in times of uncertainty.</p>
         </div>
-    </nav>
 
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Blog</h1>
-                <p>Thoughts, insights, and reflections.</p>
+        {% assign posts_sorted = site.posts | sort: 'date' | reverse %}
+        {% for post in posts_sorted %}
+          <div class="service-card-large" style="flex-direction: column; gap: 14px; margin-bottom: 28px;">
+            <div>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                {% if post.category %}
+                  <span style="display: inline-block; padding: 6px 10px; border: 1px solid var(--color-border-light); border-radius: 999px; color: var(--color-text-light); font-size: 0.85rem;">{{ post.category }}</span>
+                {% endif %}
+                {% if post.tags %}
+                  {% for t in post.tags %}
+                    <span style="display: inline-block; padding: 6px 10px; border: 1px solid var(--color-border-light); border-radius: 999px; color: var(--color-text-light); font-size: 0.85rem;">{{ t }}</span>
+                  {% endfor %}
+                {% endif %}
+                <span style="color: var(--color-text-muted); font-size: 0.9rem;">{{ post.date | date: '%B %e, %Y' }}</span>
+              </div>
+              <h3 style="margin-top: 10px;">{{ post.title }}</h3>
+              <p style="margin-top: 8px; color: var(--color-text-light);">{{ post.excerpt | strip_html | strip_newlines }}</p>
             </div>
-        </section>
-
-        <section class="blog-section">
-            <div class="container">
-                <div class="blog-layout">
-                    <div class="blog-main">
-                        <div class="services-intro">
-                            <h2>Latest</h2>
-                            <p>Short posts on clarity, decisions, and building a workable structure in times of uncertainty.</p>
-                        </div>
-
-                        <div class="service-card-large" style="flex-direction: column; gap: 14px; margin-bottom: 28px;">
-                            <div>
-                                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-                                    <span style="display: inline-block; padding: 6px 10px; border: 1px solid var(--color-border-light); border-radius: 999px; color: var(--color-text-light); font-size: 0.85rem;">Clarity</span>
-                                    <span style="display: inline-block; padding: 6px 10px; border: 1px solid var(--color-border-light); border-radius: 999px; color: var(--color-text-light); font-size: 0.85rem;">AI &amp; Work</span>
-                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">February 18, 2026</span>
-                                </div>
-                                <h3 style="margin-top: 10px;">My Homepage Needed a Clarity Session</h3>
-                                <p style="margin-top: 8px; color: var(--color-text-light);">The speed of change is now faster than the time I need to get clarity. Execution is no longer the bottleneck. Thinking is.</p>
-                            </div>
-                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                                <a class="btn btn-primary" href="posts/my-homepage-needed-a-clarity-session.html">Read the post</a>
-                            </div>
-                        </div>
-
-                        <div class="service-card-large" style="flex-direction: column; gap: 14px; margin-bottom: 28px;">
-                            <div>
-                                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-                                    <span style="display: inline-block; padding: 6px 10px; border: 1px solid var(--color-border-light); border-radius: 999px; color: var(--color-text-light); font-size: 0.85rem;">AI &amp; Work</span>
-                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">February 12, 2026</span>
-                                </div>
-                                <h3 style="margin-top: 10px;">What AI Is Actually Filtering For</h3>
-                                <p style="margin-top: 8px; color: var(--color-text-light);">AI is not replacing humans. It is replacing the barriers between capable humans and their output.</p>
-                            </div>
-                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                                <a class="btn btn-primary" href="posts/what-ai-is-actually-filtering-for.html">Read the post</a>
-                            </div>
-                        </div>
-
-                        <div class="service-card-large" style="flex-direction: column; gap: 14px;">
-                            <a href="posts/why-im-starting-with-clarity-sessions.html" style="text-decoration: none; color: inherit;">
-                                <img src="../assets/images/blog/clarity-sessions-original.jpg" alt="AlUla, 2025 — long exposure. Original work." style="width: 100%; height: auto; border-radius: var(--radius-lg); border: 1px solid var(--color-border-light);" loading="lazy" />
-                            </a>
-
-                            <div>
-                                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-                                    <span style="display: inline-block; padding: 6px 10px; border: 1px solid var(--color-border-light); border-radius: 999px; color: var(--color-text-light); font-size: 0.85rem;">Clarity</span>
-                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">February 8, 2026</span>
-                                </div>
-                                <h3 style="margin-top: 10px;">Why I’m Starting With Clarity Sessions</h3>
-                                <p style="margin-top: 8px; color: var(--color-text-light);">The thing I kept doing for free — again and again — was helping people slow down long enough to see what’s actually in front of them.</p>
-                            </div>
-
-                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                                <a class="btn btn-primary" href="posts/why-im-starting-with-clarity-sessions.html">Read the post</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- sidebar removed (index kept minimal) -->
-                </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a class="btn btn-primary" href="{{ post.url | relative_url }}">Read the post</a>
             </div>
-        </section>
-    </main>
+          </div>
+        {% endfor %}
+      </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Mohammed Haneef</h3>
-                    <p>Intelligent Systems Architect</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../about.html">About</a></li>
-                        <li><a href="../services.html">Services</a></li>
-                        <li><a href="../portfolio.html">Portfolio</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/mhhaneef/" aria-label="LinkedIn">LinkedIn</a>
-                        <a href="https://x.com/mhaneef639" aria-label="Twitter">X</a>
-                        <a href="https://www.instagram.com/mhaneef639/" aria-label="Instagram">Instagram</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Mohammed Haneef. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../assets/js/main.js"></script>
-</body>
-</html>
+      <!-- sidebar removed (index kept minimal) -->
+    </div>
+  </div>
+</section>

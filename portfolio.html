@@ -1,159 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio - View the work and projects of Mohammed Haneef.">
-    <title>Portfolio | Mohammed Haneef</title>
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Portfolio | Mohammed Haneef" />
-    <meta property="og:description" content="A selection of proof, outcomes, and words from people I've worked with." />
-    <meta property="og:image" content="https://mhaneef639.github.io/mhaneef/assets/images/profile.jpg" />
-    <meta property="og:url" content="https://mhaneef639.github.io/mhaneef/portfolio.html" />
-    <meta property="og:type" content="website" />
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Portfolio | Mohammed Haneef" />
-    <meta name="twitter:description" content="A selection of proof, outcomes, and words from people I've worked with." />
-    <meta name="twitter:image" content="https://mhaneef639.github.io/mhaneef/assets/images/profile.jpg" />
-    <link rel="stylesheet" href="assets/css/style.css?v=navfix2-20260207-testimonials-justify">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">MH</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
-                <li><a href="blog/index.html" class="nav-link">Blog</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
+---
+layout: default
+title: Portfolio
+nav: portfolio
+description: "A small selection of proof, outcomes, and words from people I’ve worked with."
+og_type: website
+og_title: "Portfolio"
+og_description: "A small selection of proof, outcomes, and words from people I’ve worked with."
+og_image: "https://mhaneef639.github.io/mhaneef/assets/images/profile.jpg"
+---
+<section class="page-header">
+  <div class="container">
+    <h1>Portfolio</h1>
+    <p>A small selection of proof, outcomes, and words from people I've worked with.</p>
+    <p style="margin-top: 10px; color: var(--color-text-light);">If you'd like to work together, the best place to start is a <strong>Clarity Session</strong>.</p>
+    <div style="margin-top: 18px;">
+      <a href="https://calendly.com/dr-haneefmo/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book a Clarity Session</a>
+      <a href="{{ '/services.html' | relative_url }}" class="btn btn-secondary">See details</a>
+    </div>
+  </div>
+</section>
+
+<section class="services-overview">
+  <div class="container">
+    <div class="services-intro">
+      <h2>Testimonials</h2>
+      <p style="margin-top: 10px; color: var(--color-text-light);">Selected notes and stories from real collaborations.</p>
+
+      <div class="service-card-large testimonial-card" style="margin-top: 18px;">
+        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/bakeel.jpg" alt="Bakeel Naif Yamani"></div>
+        <div class="service-details">
+          <h3>Bakeel Naif Yamani, Founder, Nwaya</h3>
+          <p class="service-description testimonial-intro">I met Bakeel through a mutual friend. We were in a meeting about something else entirely, but she picked up on how I was breaking things down. After we wrapped, she asked me to stay. She wanted to "pick my brain." So we sat. We talked. We got specific about what she was actually building. That conversation turned into a working relationship. And eventually, a creative project where she showed up on camera for the first time with real confidence. It started with clarity. The creative came after.</p>
+          <p class="service-description" style="margin-top: 14px;">"Mohammed is an expert when it comes to finding true human stories and making them come to life. His creativity and view of how to do things is refreshing. I enjoyed filming with him and creating content. His easy going personality and organization skills makes it easy to work with him."</p>
+
+          <ul class="service-features" style="margin-top: 14px;">
+            <li><strong>Engagement:</strong> clarity session → creative collaboration</li>
+            <li><strong>Result:</strong> short reel reached ~10,000 views on Instagram</li>
+          </ul>
+
+          <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <a class="btn btn-outline" href="https://www.instagram.com/bakeelyamani_/" target="_blank" rel="noopener noreferrer">Instagram profile</a>
+            <a class="btn btn-outline" href="https://www.instagram.com/reel/DRzpzGdiNz9/" target="_blank" rel="noopener noreferrer">Watch the reel</a>
+          </div>
         </div>
-    </nav>
+      </div>
 
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Portfolio</h1>
-                <p>A small selection of proof, outcomes, and words from people I’ve worked with.</p>
-                <p style="margin-top: 10px; color: var(--color-text-light);">If you’d like to work together, the best place to start is a <strong>Clarity Session</strong>.</p>
-                <div style="margin-top: 18px;">
-                    <a href="https://calendly.com/dr-haneefmo/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book a Clarity Session</a>
-                    <a href="services.html" class="btn btn-secondary">See details</a>
-                </div>
-            </div>
-        </section>
+      <div class="service-card-large testimonial-card" style="margin-top: 18px;">
+        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/abdelghani.jpg" alt="Abdelghani Rouzi (Abu Sultan)"></div>
+        <div class="service-details">
+          <h3>Abdelghani Rouzi (Abu Sultan), Chairman of the Board, Rushd Center</h3>
+          <p class="service-description testimonial-intro">I met Abu Sultan through real work. Not introductions. Not networking. The kind of environment where trust isn't something you talk about. It's something you prove. He is the Chairman of the Board at Rushd Center for Rehabilitation and Addiction Treatment. And he gave me access and responsibility that I don't take lightly. Inside his institution. At times, inside his personal world. This wasn't consulting from a distance. It was building from within. Systems, leadership clarity, and real outcomes with real people in real situations. That kind of access is earned. And I carry it with a lot of gratitude.</p>
 
-        <section class="services-overview">
-            <div class="container">
-                <div class="services-intro">
-                    <h2>Testimonials</h2>
-                    <p style="margin-top: 10px; color: var(--color-text-light);">Selected notes and stories from real collaborations.</p>
+          <p class="service-description quote-ar" lang="ar" dir="rtl">"عملت مع الدكتور محمد، ما يميّزه ليس كثرة الطرح، بل دقته؛ لا يذهب مباشرة للحلول، بل يعيد ترتيب السؤال نفسه، ويكشف الزوايا الخفية التي غالبًا ما تكون أصل الإرباك. “جلسة الوضوح” معه ليست حوارًا عابرًا، بل تجربة ذهنية تُخرجك وأنت ترى المشهد أهدأ، وأصدق، وأكثر قابلية للفعل. أثق بمنهجيته، وأحترم حضوره، وأوصي به لكل من يبحث عن وضوح حقيقي لا شعارات مؤقتة."</p>
+          <p class="quote-ar-attrib" lang="ar" dir="rtl">- عبدالغني روزي (أبو سلطان)، رئيس مجلس الإدارة، مركز رشد للتأهيل وعلاج الإدمان</p>
 
-                    <div class="service-card-large testimonial-card" style="margin-top: 18px;">
-                        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/bakeel.jpg" alt="Bakeel Naif Yamani"></div>
-                        <div class="service-details">
-                            <h3>Bakeel Naif Yamani — Founder, Nwaya</h3>
-                            <p class="service-description testimonial-intro">I met Bakeel through a mutual friend. We were in a meeting about something else entirely, but she picked up on how I was breaking things down. After we wrapped, she asked me to stay. She wanted to “pick my brain.” So we sat. We talked. We got specific about what she was actually building. That conversation turned into a working relationship. And eventually, a creative project where she showed up on camera for the first time with real confidence. It started with clarity. The creative came after.</p>
-                            <p class="service-description" style="margin-top: 14px;">“Mohammed is an expert when it comes to finding true human stories and making them come to life. His creativity and view of how to do things is refreshing. I enjoyed filming with him and creating content. His easy going personality and organization skills makes it easy to work with him.”</p>
+          <p class="service-description" style="margin-top: 14px;">"What sets Dr. Mohammed apart isn't how much he says, it's his precision. He doesn't rush to solutions. He reorders the question itself, and reveals the hidden angles that are often the real source of confusion. A 'Clarity Session' with him isn't a casual conversation, it's a mental experience. You leave seeing the situation more calmly, more honestly, and with clearer next steps you can actually act on. I trust his method, respect his presence, and recommend him to anyone seeking real clarity, not temporary slogans."</p>
+          <p style="margin-top: 10px; color: var(--color-text-muted); font-size: 0.95rem;">- Abdelghani Rouzi (Abu Sultan), Chairman of the Board, Rushd Center for Rehabilitation &amp; Addiction Treatment</p>
 
-                            <ul class="service-features" style="margin-top: 14px;">
-                                <li><strong>Engagement:</strong> clarity session → creative collaboration</li>
-                                <li><strong>Result:</strong> short reel reached ~10,000 views on Instagram</li>
-                            </ul>
-
-                            <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
-                                <a class="btn btn-outline" href="https://www.instagram.com/bakeelyamani_/" target="_blank" rel="noopener noreferrer">Instagram profile</a>
-                                <a class="btn btn-outline" href="https://www.instagram.com/reel/DRzpzGdiNz9/" target="_blank" rel="noopener noreferrer">Watch the reel</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="service-card-large testimonial-card" style="margin-top: 18px;">
-                        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/abdelghani.jpg" alt="Abdelghani Rouzi (Abu Sultan)"></div>
-                        <div class="service-details">
-                            <h3>Abdelghani Rouzi (Abu Sultan) — Chairman of the Board, Rushd Center</h3>
-                            <p class="service-description testimonial-intro">I met Abu Sultan through real work. Not introductions. Not networking. The kind of environment where trust isn’t something you talk about. It’s something you prove. He is the Chairman of the Board at Rushd Center for Rehabilitation and Addiction Treatment. And he gave me access and responsibility that I don’t take lightly. Inside his institution. At times, inside his personal world. This wasn’t consulting from a distance. It was building from within. Systems, leadership clarity, and real outcomes with real people in real situations. That kind of access is earned. And I carry it with a lot of gratitude.</p>
-
-                            <p class="service-description quote-ar" lang="ar" dir="rtl">“عملت مع الدكتور محمد، ما يميّزه ليس كثرة الطرح، بل دقته؛ لا يذهب مباشرة للحلول، بل يعيد ترتيب السؤال نفسه، ويكشف الزوايا الخفية التي غالبًا ما تكون أصل الإرباك. “جلسة الوضوح” معه ليست حوارًا عابرًا، بل تجربة ذهنية تُخرجك وأنت ترى المشهد أهدأ، وأصدق، وأكثر قابلية للفعل. أثق بمنهجيته، وأحترم حضوره، وأوصي به لكل من يبحث عن وضوح حقيقي لا شعارات مؤقتة.”</p>
-                            <p class="quote-ar-attrib" lang="ar" dir="rtl">— عبدالغني روزي (أبو سلطان)، رئيس مجلس الإدارة، مركز رشد للتأهيل وعلاج الإدمان</p>
-
-                            <p class="service-description" style="margin-top: 14px;">“What sets Dr. Mohammed apart isn’t how much he says — it’s his precision. He doesn’t rush to solutions. He reorders the question itself, and reveals the hidden angles that are often the real source of confusion. A ‘Clarity Session’ with him isn’t a casual conversation — it’s a mental experience. You leave seeing the situation more calmly, more honestly, and with clearer next steps you can actually act on. I trust his method, respect his presence, and recommend him to anyone seeking real clarity — not temporary slogans.”</p>
-                            <p style="margin-top: 10px; color: var(--color-text-muted); font-size: 0.95rem;">— Abdelghani Rouzi (Abu Sultan), Chairman of the Board, Rushd Center for Rehabilitation &amp; Addiction Treatment</p>
-
-                            <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
-                                <a class="btn btn-outline" href="https://rehabrushd.com/about/" target="_blank" rel="noopener noreferrer">Rushd Center (About)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="service-card-large testimonial-card" style="margin-top: 18px;">
-                        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/salama.jpg?v=20260210-2126" alt="Mohammed Salama"></div>
-                        <div class="service-details">
-                            <h3 id="salama">Mohammed Salama — Creative Direction / Zanzibar Food Episode</h3>
-                            <p class="service-description testimonial-intro">Salama saw something in me before I had a neat portfolio to point at. We were working on a media concept together. Travel, food, real human texture. Not the polished tourism stuff. The working title was a series built around local eating: <strong>أكل شوارع وبيوت</strong> (street food and home food). The idea was to create episodes with enough flavor and narrative weight to stand as a real series. He asked me to direct a trip to Zanzibar. Move fast. Film well. Shape something coherent from real life. It wasn’t just production. It was making leadership decisions on the go. In the car, in the street, with time and people moving around you. The work hasn’t been published yet. Life and timing got in the way. But the trust behind it is the whole point.</p>
-
-                            <p class="service-description quote-ar" lang="ar" dir="rtl">“اكتب أي شيء… وأنا أوقع عليه.”</p>
-                            <p class="quote-ar-attrib" lang="ar" dir="rtl">— محمد سلامة (كاتب وفنان)</p>
-
-                            <p class="service-description" style="margin-top: 14px;">“Write anything… and I’ll sign it.”</p>
-                            <p style="margin-top: 10px; color: var(--color-text-muted); font-size: 0.95rem;">— Mohammed Salama, writer, artist.</p>
-
-                            <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
-                                <a class="btn btn-outline" href="https://www.instagram.com/mmmssalama?igsh=YW12OXhlYnU5NHhx" target="_blank" rel="noopener noreferrer">Instagram</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p style="margin-top: 14px; color: var(--color-text-muted); font-size: 0.95rem;">Boundary: This is not medical, legal, or financial advice.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Mohammed Haneef</h3>
-                    <p>Intelligent Systems Architect</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/mhhaneef/" aria-label="LinkedIn">LinkedIn</a>
-                        <a href="https://x.com/mhaneef639" aria-label="Twitter">X</a>
-                        <a href="https://www.instagram.com/mhaneef639/" aria-label="Instagram">Instagram</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Mohammed Haneef. All rights reserved.</p>
-            </div>
+          <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <a class="btn btn-outline" href="https://rehabrushd.com/about/" target="_blank" rel="noopener noreferrer">Rushd Center (About)</a>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
+      <div class="service-card-large testimonial-card" style="margin-top: 18px;">
+        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/salama.jpg?v=20260210-2126" alt="Mohammed Salama"></div>
+        <div class="service-details">
+          <h3 id="salama">Mohammed Salama, Creative Direction, Zanzibar Food Episode</h3>
+          <p class="service-description testimonial-intro">Salama saw something in me before I had a neat portfolio to point at. We were working on a media concept together. Travel, food, real human texture. Not the polished tourism stuff. The working title was a series built around local eating: <strong>أكل شوارع وبيوت</strong> (street food and home food). The idea was to create episodes with enough flavor and narrative weight to stand as a real series. He asked me to direct a trip to Zanzibar. Move fast. Film well. Shape something coherent from real life. It wasn't just production. It was making leadership decisions on the go. In the car, in the street, with time and people moving around you. The work hasn't been published yet. Life and timing got in the way. But the trust behind it is the whole point.</p>
+
+          <p class="service-description quote-ar" lang="ar" dir="rtl">"اكتب أي شيء… وأنا أوقع عليه."</p>
+          <p class="quote-ar-attrib" lang="ar" dir="rtl">- محمد سلامة (كاتب وفنان)</p>
+
+          <p class="service-description" style="margin-top: 14px;">"Write anything... and I'll sign it."</p>
+          <p style="margin-top: 10px; color: var(--color-text-muted); font-size: 0.95rem;">- Mohammed Salama, writer, artist.</p>
+
+          <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <a class="btn btn-outline" href="https://www.instagram.com/mmmssalama?igsh=YW12OXhlYnU5NHhx" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top: 14px; color: var(--color-text-muted); font-size: 0.95rem;">Boundary: This is not medical, legal, or financial advice.</p>
+    </div>
+  </div>
+</section>
