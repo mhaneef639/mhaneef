@@ -1,0 +1,70 @@
+---
+layout: default
+---
+<style>
+  body.night-sky {
+    background: #0b0f14;
+    color: rgba(255,255,255,0.92);
+  }
+  body.night-sky .navbar {
+    background: rgba(11, 15, 20, 0.82);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  body.night-sky .nav-link { color: rgba(255,255,255,0.80); }
+  body.night-sky .nav-link:hover { color: rgba(255,255,255,0.95); }
+  body.night-sky .nav-link.active { color: #fff; }
+
+  body.night-sky .nav-toggle span { background: rgba(255,255,255,0.85); }
+  body.night-sky .nav-menu { background: #0b0f14; }
+  body.night-sky .nav-menu a { color: rgba(255,255,255,0.88); }
+  body.night-sky .nav-menu a:hover { color: #ffffff; }
+
+  body.night-sky .post-header { background: rgba(11, 15, 20, 0.92); }
+  body.night-sky .post-excerpt { color: rgba(255,255,255,0.70); }
+  body.night-sky .post-meta { color: rgba(255,255,255,0.55); }
+  body.night-sky .post-category { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.16); }
+
+  body.night-sky .post-content { background: transparent; }
+  body.night-sky .container-narrow p { color: rgba(255,255,255,0.82); }
+  body.night-sky .container-narrow p.lead { color: rgba(255,255,255,0.92); }
+  body.night-sky .container-narrow strong { color: #ffffff; }
+
+  body.night-sky a { color: rgba(190, 230, 210, 0.95); }
+  body.night-sky a:hover { color: #c9f2df; }
+
+  body.night-sky .service-card-large,
+  body.night-sky .author-card,
+  body.night-sky .post-nav-link {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.10);
+  }
+
+  body.night-sky .btn.btn-secondary {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.86);
+  }
+  body.night-sky .btn.btn-secondary:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.22);
+  }
+
+  body.night-sky .back-link { color: rgba(255,255,255,0.70); }
+  body.night-sky .back-link:hover { color: rgba(255,255,255,0.92); }
+
+  body.night-sky .post-featured-image img { border-color: rgba(255,255,255,0.10) !important; }
+
+  body.night-sky .footer {
+    background: #0b0f14;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  body.night-sky .footer p,
+  body.night-sky .footer a,
+  body.night-sky .footer h3,
+  body.night-sky .footer h4 { color: rgba(255,255,255,0.78); }
+  body.night-sky .footer a:hover { color: rgba(255,255,255,0.95); }
+</style>
+
+<article class="blog-post">
+  {{ content }}
+</article>

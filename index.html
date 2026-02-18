@@ -1,170 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mohammed Haneef — Intelligent Systems Architect. Designing how humans and AI think together.">
-    <meta property="og:title" content="Mohammed Haneef">
-    <meta property="og:description" content="Intelligent Systems Architect — designing how humans and AI think together.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mhaneef639.github.io/mhaneef/">
-    <title>Mohammed Haneef</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=redesign-20260218">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">MH</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="blog/index.html" class="nav-link">Blog</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
+---
+layout: default
+title: Mohammed Haneef
+nav: home
+description: "Mohammed Haneef. Intelligent Systems Architect. Designing how humans and AI think together."
+og_type: website
+og_title: "Mohammed Haneef"
+og_description: "Intelligent Systems Architect. Designing how humans and AI think together."
+og_image: "https://mhaneef639.github.io/mhaneef/assets/images/profile.jpg"
+---
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Mohammed Haneef</h1>
+    <p class="hero-subtitle" style="font-size: 1.25rem; margin-top: 0.5rem;">Intelligent Systems Architect</p>
+    <p class="hero-description" style="margin-top: 1.5rem; max-width: 540px; line-height: 1.7;">
+      I design systems where humans and AI each play the right role. The interesting problem isn't the AI, it's the pipeline: who thinks what, when, and how it becomes a decision or action.
+    </p>
+    <div class="hero-cta" style="margin-top: 2rem;">
+      <a href="{{ '/about.html' | relative_url }}" class="btn btn-primary">More about me</a>
+      <a href="{{ '/services.html' | relative_url }}" class="btn btn-secondary">Work with me</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-image-placeholder">
+      <img src="assets/images/profile.jpg" alt="Mohammed Haneef" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+    <h2>What I'm working on</h2>
+    <div class="intro-grid">
+      <div class="intro-card">
+        <div class="intro-icon">🌐</div>
+        <h3>Cosmic League</h3>
+        <p>Designing how communities connect. A long-term project to reimagine travel, replace old systems, and build something where human and artificial intelligence work as one.</p>
+      </div>
+      <div class="intro-card">
+        <div class="intro-icon">🧠</div>
+        <h3>Clarity Sessions</h3>
+        <p>Focused conversations for founders and professionals who need to decide the next move, and leave with a plan.</p>
+        <a href="{{ '/services.html' | relative_url }}" style="font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;">Learn more →</a>
+      </div>
+      <div class="intro-card">
+        <div class="intro-icon">🎬</div>
+        <h3>Creative Work</h3>
+        <p>Stories told through writing, reels, and photography. Thinking out loud, sometimes in words, sometimes in images.</p>
+        <a href="https://www.instagram.com/mhaneef639/" style="font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;" target="_blank" rel="noopener noreferrer">See on Instagram →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="beliefs-section" style="padding: 4rem 0; background: var(--color-surface);">
+  <div class="container" style="max-width: 680px;">
+    <h2 style="text-align: center;">How I think</h2>
+    <ul style="margin-top: 2rem; list-style: none; padding: 0; line-height: 2;">
+      <li><strong>Clarity over comfort.</strong> I'd rather know the hard truth than believe a comfortable lie.</li>
+      <li><strong>Systems over heroics.</strong> Good design means the system works, not that someone had to save it.</li>
+      <li><strong>Decisions over discussions.</strong> Thinking is valuable. Deciding is where it counts.</li>
+      <li><strong>Substance over performance.</strong> I'm not interested in looking smart. I'm interested in being useful.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="testimonials-strip">
+  <div class="container">
+    <h2 style="text-align:center;">People I've worked with</h2>
+    <div class="testimonials-grid" style="margin-top: 24px;">
+      <div class="testimonial-mini">
+        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/bakeel.jpg" alt="Bakeel Naif Yamani"></div>
+        <div>
+          <p class="testimonial-mini-quote">"An expert at finding true human stories and making them come to life."</p>
+          <p class="testimonial-mini-author">- Bakeel Naif Yamani, Founder, Nwaya</p>
         </div>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Mohammed Haneef</h1>
-                <p class="hero-subtitle" style="font-size: 1.25rem; margin-top: 0.5rem;">Intelligent Systems Architect</p>
-                <p class="hero-description" style="margin-top: 1.5rem; max-width: 540px; line-height: 1.7;">
-                    I design systems where humans and AI each play the right role. The interesting problem isn't the AI — it's the pipeline: who thinks what, when, and how it becomes a decision or action.
-                </p>
-                <div class="hero-cta" style="margin-top: 2rem;">
-                    <a href="about.html" class="btn btn-primary">More about me</a>
-                    <a href="services.html" class="btn btn-secondary">Work with me</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-image-placeholder">
-                    <img src="assets/images/profile.jpg" alt="Mohammed Haneef" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
-                </div>
-            </div>
-        </section>
-
-        <section class="intro">
-            <div class="container">
-                <h2>What I'm working on</h2>
-                <div class="intro-grid">
-                    <div class="intro-card">
-                        <div class="intro-icon">🌐</div>
-                        <h3>Cosmic League</h3>
-                        <p>Designing how communities connect. A long-term project to reimagine travel, replace old systems, and build something where human and artificial intelligence work as one.</p>
-                    </div>
-                    <div class="intro-card">
-                        <div class="intro-icon">🧠</div>
-                        <h3>Clarity Sessions</h3>
-                        <p>Focused conversations for founders and professionals who need to decide the next move — and leave with a plan.</p>
-                        <a href="services.html" style="font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;">Learn more →</a>
-                    </div>
-                    <div class="intro-card">
-                        <div class="intro-icon">🎬</div>
-                        <h3>Creative Work</h3>
-                        <p>Stories told through writing, reels, and photography. Thinking out loud — sometimes in words, sometimes in images.</p>
-                        <a href="https://www.instagram.com/mhaneef639/" style="font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;" target="_blank">See on Instagram →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="beliefs-section" style="padding: 4rem 0; background: var(--color-surface);">
-            <div class="container" style="max-width: 680px;">
-                <h2 style="text-align: center;">How I think</h2>
-                <ul style="margin-top: 2rem; list-style: none; padding: 0; line-height: 2;">
-                    <li><strong>Clarity over comfort.</strong> I'd rather know the hard truth than believe a comfortable lie.</li>
-                    <li><strong>Systems over heroics.</strong> Good design means the system works — not that someone had to save it.</li>
-                    <li><strong>Decisions over discussions.</strong> Thinking is valuable. Deciding is where it counts.</li>
-                    <li><strong>Substance over performance.</strong> I'm not interested in looking smart. I'm interested in being useful.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="testimonials-strip">
-            <div class="container">
-                <h2 style="text-align:center;">People I've worked with</h2>
-                <div class="testimonials-grid" style="margin-top: 24px;">
-                    <div class="testimonial-mini">
-                        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/bakeel.jpg" alt="Bakeel Naif Yamani"></div>
-                        <div>
-                            <p class="testimonial-mini-quote">"An expert at finding true human stories and making them come to life."</p>
-                            <p class="testimonial-mini-author">— Bakeel Naif Yamani, Founder, Nwaya</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-mini">
-                        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/abdelghani.jpg" alt="Abdelghani Rouzi (Abu Sultan)"></div>
-                        <div>
-                            <p class="testimonial-mini-quote">"Real clarity — not temporary slogans."</p>
-                            <p class="testimonial-mini-author">— Abdelghani Rouzi (Abu Sultan), Chairman of the Board, Rushd Center</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-mini">
-                        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/salama.jpg" alt="Mohammed Salama"></div>
-                        <div>
-                            <p class="testimonial-mini-quote">"Write anything… and I'll sign it."</p>
-                            <p class="testimonial-mini-author">— Mohammed Salama, writer, artist</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top: 22px; text-align: center;">
-                    <a class="btn btn-outline" href="portfolio.html">See the work →</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <h2>Let's talk</h2>
-                <p>Whether you have a project, a question, or just want to connect.</p>
-                <div style="margin-top: 18px;">
-                    <a href="contact.html" class="btn btn-primary">Get in touch</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Mohammed Haneef</h3>
-                    <p>Intelligent Systems Architect</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/mhhaneef/" aria-label="LinkedIn">LinkedIn</a>
-                        <a href="https://x.com/mhaneef639/" aria-label="Twitter">X</a>
-                        <a href="https://www.instagram.com/mhaneef639/" aria-label="Instagram">Instagram</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Mohammed Haneef. All rights reserved.</p>
-            </div>
+      </div>
+      <div class="testimonial-mini">
+        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/abdelghani.jpg" alt="Abdelghani Rouzi (Abu Sultan)"></div>
+        <div>
+          <p class="testimonial-mini-quote">"Real clarity, not temporary slogans."</p>
+          <p class="testimonial-mini-author">- Abdelghani Rouzi (Abu Sultan), Chairman of the Board, Rushd Center</p>
         </div>
-    </footer>
+      </div>
+      <div class="testimonial-mini">
+        <div class="service-icon service-icon-photo"><img src="assets/images/testimonials/salama.jpg" alt="Mohammed Salama"></div>
+        <div>
+          <p class="testimonial-mini-quote">"Write anything... and I'll sign it."</p>
+          <p class="testimonial-mini-author">- Mohammed Salama, writer, artist</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 22px; text-align: center;">
+      <a class="btn btn-outline" href="{{ '/portfolio.html' | relative_url }}">See the work →</a>
+    </div>
+  </div>
+</section>
 
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
+<section class="cta-section">
+  <div class="container">
+    <h2>Let's talk</h2>
+    <p>Whether you have a project, a question, or just want to connect.</p>
+    <div style="margin-top: 18px;">
+      <a href="{{ '/contact.html' | relative_url }}" class="btn btn-primary">Get in touch</a>
+    </div>
+  </div>
+</section>

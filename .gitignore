@@ -12,6 +12,12 @@ Thumbs.db
 node_modules/
 .env
 
-# Drafts (never push — keep local until ready to publish)
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.bundle/
+vendor/
+
+# Drafts (never push - keep local until ready to publish)
 blog/posts/the-soldier-said-forgive-us.html
 blog/posts/what-the-state-taught-me.html

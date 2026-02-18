@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% assign base_title = 'Mohammed Haneef' %}
+<title>{% if page.title and page.title != base_title %}{{ page.title }} | {{ base_title }}{% else %}{{ base_title }}{% endif %}</title>
+
+{% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+{% endif %}
+
+<meta property="og:type" content="{% if page.og_type %}{{ page.og_type }}{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.og_title | default: page.title | default: 'Mohammed Haneef' }}">
+<meta property="og:description" content="{{ page.og_description | default: page.description }}">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+{% if page.og_image %}
+  <meta property="og:image" content="{{ page.og_image }}">
+{% endif %}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.og_title | default: page.title | default: 'Mohammed Haneef' }}">
+<meta name="twitter:description" content="{{ page.og_description | default: page.description }}">
+
+<link rel="stylesheet" href="{{ '/assets/css/style.css?v=redesign-20260218' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
