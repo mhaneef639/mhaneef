@@ -3,7 +3,7 @@ url: "https://mhaneef639.github.io"
 baseurl: "/mhaneef"
 
 # Keep current public URLs stable
-permalink: pretty
+# Note: do not use global `permalink: pretty` because it changes pages like /about.html -> /about/
 
 collections:
   posts:
@@ -21,4 +21,8 @@ exclude:
   - README.md
   - node_modules
   - vendor
+  - .bundle
+  - _site
+  - Gemfile
   - Gemfile.lock
+  - _config.yml
