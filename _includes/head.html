@@ -12,13 +12,26 @@
 <meta property="og:title" content="{{ page.og_title | default: page.title | default: 'Mohammed Haneef' }}">
 <meta property="og:description" content="{{ page.og_description | default: page.description }}">
 <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-{% if page.og_image %}
-  <meta property="og:image" content="{{ page.og_image }}">
+
+{% assign og_img = page.og_image %}
+{% if og_img %}
+  {% if og_img contains 'http' %}
+    <meta property="og:image" content="{{ og_img }}">
+  {% else %}
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ og_img }}">
+  {% endif %}
 {% endif %}
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ page.og_title | default: page.title | default: 'Mohammed Haneef' }}">
 <meta name="twitter:description" content="{{ page.og_description | default: page.description }}">
+{% if og_img %}
+  {% if og_img contains 'http' %}
+    <meta name="twitter:image" content="{{ og_img }}">
+  {% else %}
+    <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ og_img }}">
+  {% endif %}
+{% endif %}
 
 <link rel="stylesheet" href="{{ '/assets/css/style.css?v=redesign-20260218' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -6,10 +6,12 @@ tags:
   - agents
   - workflow
   - attention
-excerpt: "This post documents a different way to use AI: not as a clever chatbot, but as infrastructure that protects attention through governance, delegation, and quiet self maintenance."
+excerpt: "This post documents a different way to use AI: not as a clever chatbot, but as infrastructure that protects attention through governance, delegation, and quiet self-maintenance."
+og_image: "/assets/images/blog/governance-system-for-attention-card.jpg"
 ---
 
 ![Abstract illustration of a crown made of connected nodes, surrounded by calm dashboard cards]({{ '/assets/images/blog/governance-system-for-attention.png' | relative_url }})
+
 
 ## Context
 
