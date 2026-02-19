@@ -1,6 +1,6 @@
 ---
 title: "Governance for Attention"
-date: 2026-02-19 15:00:00 +0300
+date: 2026-02-19 00:00:00 +0300
 category: "AI systems"
 tags:
   - agents
