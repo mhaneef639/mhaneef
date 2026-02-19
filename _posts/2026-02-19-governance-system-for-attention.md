@@ -7,12 +7,7 @@ tags:
   - workflow
   - attention
 excerpt: "This post documents a different way to use AI: not as a clever chatbot, but as infrastructure that protects attention through governance, delegation, and quiet self-maintenance."
-og_image: "/assets/images/blog/governance-system-for-attention-card-v2.jpg"
-og_image_type: "image/jpeg"
-og_image_width: 1200
-og_image_height: 630
-og_image_alt: "Abstract crown made of connected nodes, surrounded by calm dashboard cards"
-twitter_image_alt: "Abstract crown made of connected nodes, surrounded by calm dashboard cards"
+og_image: "/assets/images/blog/governance-system-for-attention-card.jpg"
 ---
 
 ![Abstract illustration of a crown made of connected nodes, surrounded by calm dashboard cards]({{ '/assets/images/blog/governance-system-for-attention.png' | relative_url }})
