@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1000" viewBox="0 0 2000 1000">
+  <defs>
+    <!-- Palette -->
+    <style>
+      :root{
+        --bg:#FBF7F0;
+        --teal:#1F3A3D;
+        --teal2:#2F4E52;
+        --sand:#C4A46A;
+        --border:#E6DED2;
+        --muted:#9CA3AF;
+      }
+      .card { fill: #ffffff; stroke: var(--border); stroke-width: 2; }
+      .card2 { fill: #ffffff; stroke: var(--border); stroke-width: 2; }
+      .teal { stroke: var(--teal); }
+      .teal2 { stroke: var(--teal2); }
+      .sand { stroke: var(--sand); }
+      .line { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.95; }
+      .thin { stroke-width: 3; opacity: 0.65; }
+      .node { fill: #ffffff; stroke-width: 6; }
+      .nodeSmall { fill: #ffffff; stroke-width: 5; opacity: 0.95; }
+      .shadowed { filter: url(#softShadow); }
+      .soft { opacity: 0.35; }
+    </style>
+
+    <!-- Soft shadow -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
+      <feOffset in="blur" dx="0" dy="10" result="off"/>
+      <feColorMatrix in="off" type="matrix" values="0 0 0 0 0.12  0 0 0 0 0.18  0 0 0 0 0.22  0 0 0 0.18 0" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Paper grain -->
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0"/>
+    </filter>
+
+    <!-- Gentle vignette -->
+    <radialGradient id="vignette" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#FBF7F0" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1F3A3D" stop-opacity="0.08"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2000" height="1000" fill="#FBF7F0"/>
+  <rect width="2000" height="1000" fill="url(#vignette)"/>
+
+  <!-- Decorative quiet network lines (subtle) -->
+  <path class="line thin teal2" d="M260,760 C420,640 520,640 680,760"/>
+  <path class="line thin teal2" d="M1320,250 C1460,170 1600,180 1740,260"/>
+  <path class="line thin sand" d="M350,280 C520,200 620,220 760,310"/>
+  <path class="line thin sand" d="M1240,820 C1440,700 1600,710 1780,840"/>
+
+  <!-- Cards (dashboards, quiet automation) -->
+  <g class="shadowed">
+    <rect class="card" x="210" y="320" rx="18" ry="18" width="460" height="220"/>
+    <rect x="250" y="365" rx="10" ry="10" width="250" height="18" fill="#E6DED2" opacity="0.85"/>
+    <rect x="250" y="405" rx="10" ry="10" width="370" height="18" fill="#E6DED2" opacity="0.65"/>
+    <rect x="250" y="445" rx="10" ry="10" width="310" height="18" fill="#E6DED2" opacity="0.65"/>
+    <rect x="250" y="485" rx="10" ry="10" width="180" height="18" fill="#C4A46A" opacity="0.55"/>
+  </g>
+
+  <g class="shadowed">
+    <rect class="card2" x="1330" y="520" rx="18" ry="18" width="460" height="240"/>
+    <rect x="1370" y="565" rx="10" ry="10" width="310" height="18" fill="#E6DED2" opacity="0.85"/>
+    <rect x="1370" y="605" rx="10" ry="10" width="390" height="18" fill="#E6DED2" opacity="0.65"/>
+    <rect x="1370" y="645" rx="10" ry="10" width="240" height="18" fill="#E6DED2" opacity="0.65"/>
+
+    <!-- Small scoreboard dots -->
+    <circle cx="1390" cy="710" r="10" fill="#1F3A3D" opacity="0.55"/>
+    <circle cx="1430" cy="710" r="10" fill="#C4A46A" opacity="0.65"/>
+    <circle cx="1470" cy="710" r="10" fill="#2F4E52" opacity="0.45"/>
+    <rect x="1510" y="700" rx="10" ry="10" width="240" height="20" fill="#E6DED2" opacity="0.55"/>
+  </g>
+
+  <!-- Central crown of nodes (orchestrator) -->
+  <g class="shadowed">
+    <!-- Base arc -->
+    <path class="line teal" d="M820,610 C980,740 1020,740 1180,610"/>
+    <path class="line sand" d="M860,600 C985,700 1015,700 1140,600"/>
+
+    <!-- Crown spikes as network -->
+    <path class="line teal" d="M860,600 L910,430 L980,555 L1050,410 L1120,600"/>
+    <path class="line sand" d="M880,590 L920,460 L980,555 L1040,440 L1100,590"/>
+
+    <!-- Nodes -->
+    <circle class="node teal" cx="860" cy="600" r="18"/>
+    <circle class="node teal" cx="910" cy="430" r="18"/>
+    <circle class="node sand" cx="980" cy="555" r="22"/>
+    <circle class="node teal" cx="1050" cy="410" r="18"/>
+    <circle class="node teal" cx="1120" cy="600" r="18"/>
+
+    <!-- Base nodes -->
+    <circle class="nodeSmall sand" cx="940" cy="650" r="14"/>
+    <circle class="nodeSmall teal2" cx="1020" cy="650" r="14"/>
+    <circle class="nodeSmall sand" cx="1100" cy="650" r="14"/>
+  </g>
+
+  <!-- Court nodes (specialists) -->
+  <g>
+    <path class="line thin teal" d="M670,430 C720,430 760,450 800,500"/>
+    <circle class="nodeSmall teal" cx="670" cy="430" r="14"/>
+
+    <path class="line thin sand" d="M1270,420 C1220,420 1180,450 1140,500"/>
+    <circle class="nodeSmall sand" cx="1270" cy="420" r="14"/>
+
+    <path class="line thin teal2" d="M760,740 C820,720 860,700 900,660"/>
+    <circle class="nodeSmall teal2" cx="760" cy="740" r="13"/>
+
+    <path class="line thin sand" d="M1240,720 C1180,700 1140,690 1100,660"/>
+    <circle class="nodeSmall sand" cx="1240" cy="720" r="13"/>
+  </g>
+
+  <!-- Grain overlay -->
+  <rect width="2000" height="1000" filter="url(#grain)" opacity="0.9"/>
+</svg>
