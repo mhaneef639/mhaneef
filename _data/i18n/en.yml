@@ -1,0 +1,33 @@
+# English UI strings
+# These power the navbar, footer, and shared buttons.
+# Edit via TASK replies — do not edit directly.
+
+nav:
+  home: "Home"
+  about: "About"
+  services: "Services"
+  portfolio: "Portfolio"
+  blog: "Blog"
+  contact: "Contact"
+  lang_switch: "عربي"
+
+footer:
+  quick_links: "Quick Links"
+  connect: "Connect"
+  rights: "All rights reserved."
+  tagline: "Intelligent Systems Architect"
+
+buttons:
+  more_about: "More about me"
+  work_with: "Work with me"
+  learn_more: "Learn more"
+  see_instagram: "See on Instagram"
+  see_work: "See the work →"
+  get_in_touch: "Get in touch"
+
+sections:
+  working_on: "What I'm working on"
+  how_i_think: "How I think"
+  people: "People I've worked with"
+  lets_talk: "Let's talk"
+  lets_talk_sub: "Whether you have a project, a question, or just want to connect."

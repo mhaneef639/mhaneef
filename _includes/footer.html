@@ -1,21 +1,29 @@
+{% assign t = site.data.i18n[page.lang | default: 'en'] %}
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-info">
         <h3>Mohammed Haneef</h3>
-        <p>Intelligent Systems Architect</p>
+        <p>{{ t.footer.tagline }}</p>
       </div>
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h4>{{ t.footer.quick_links }}</h4>
         <ul>
-          <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
-          <li><a href="{{ '/services.html' | relative_url }}">Services</a></li>
-          <li><a href="{{ '/portfolio.html' | relative_url }}">Portfolio</a></li>
-          <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+          {% if page.lang == 'ar' %}
+            <li><a href="{{ '/ar/about.html' | relative_url }}">{{ t.nav.about }}</a></li>
+            <li><a href="{{ '/ar/services.html' | relative_url }}">{{ t.nav.services }}</a></li>
+            <li><a href="{{ '/ar/portfolio.html' | relative_url }}">{{ t.nav.portfolio }}</a></li>
+            <li><a href="{{ '/ar/contact.html' | relative_url }}">{{ t.nav.contact }}</a></li>
+          {% else %}
+            <li><a href="{{ '/about.html' | relative_url }}">{{ t.nav.about }}</a></li>
+            <li><a href="{{ '/services.html' | relative_url }}">{{ t.nav.services }}</a></li>
+            <li><a href="{{ '/portfolio.html' | relative_url }}">{{ t.nav.portfolio }}</a></li>
+            <li><a href="{{ '/contact.html' | relative_url }}">{{ t.nav.contact }}</a></li>
+          {% endif %}
         </ul>
       </div>
       <div class="footer-social">
-        <h4>Connect</h4>
+        <h4>{{ t.footer.connect }}</h4>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/mhhaneef/" aria-label="LinkedIn">LinkedIn</a>
           <a href="https://x.com/mhaneef639" aria-label="Twitter">X</a>
@@ -24,7 +32,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ 'now' | date: '%Y' }} Mohammed Haneef. All rights reserved.</p>
+      <p>&copy; {{ 'now' | date: '%Y' }} Mohammed Haneef. {{ t.footer.rights }}</p>
     </div>
   </div>
 </footer>

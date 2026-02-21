@@ -1,0 +1,32 @@
+# Arabic UI strings — DRAFT (awaiting TASK-01 corrections from Mohammed)
+# Status: PENDING — do not push to production until Mohammed approves.
+
+nav:
+  home: "الرئيسية"
+  about: "عنّي"
+  services: "خدماتي"
+  portfolio: "أعمالي"
+  blog: "كتاباتي"
+  contact: "تواصل"
+  lang_switch: "English"
+
+footer:
+  quick_links: "روابط سريعة"
+  connect: "تواصل"
+  rights: "جميع الحقوق محفوظة."
+  tagline: "مهندس أنظمة ذكية"
+
+buttons:
+  more_about: "تعرّف عليّ"
+  work_with: "اعمل معي"
+  learn_more: "اعرف أكثر"
+  see_instagram: "تابعني على انستغرام"
+  see_work: "شاهد الأعمال ←"
+  get_in_touch: "تواصل معي"
+
+sections:
+  working_on: "ما أعمل عليه"
+  how_i_think: "كيف أفكر"
+  people: "من عملت معهم"
+  lets_talk: "لنتحدث"
+  lets_talk_sub: "سواء كان لديك مشروع، سؤال، أو تريد فقط التواصل."
