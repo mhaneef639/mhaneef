@@ -29,12 +29,16 @@
 - TASK-10 — Blog post #4: A Governance System for Attention
 
 ### 🔧 Technical (David does solo, no translation needed)
-- [ ] Add `_data/i18n/en.yml` and `_data/i18n/ar.yml`
-- [ ] Create `/ar/` folder scaffold (index, about, services, portfolio, contact, blog)
-- [ ] Add language switcher to `nav.html`
-- [ ] RTL stylesheet block for Arabic pages
-- [ ] Arabic font loaded in `head.html` (after font is chosen)
-- [ ] Blog `/ar/blog/` with Arabic post layout
+- [x] Add `_data/i18n/en.yml` and `_data/i18n/ar.yml` ✅ 2026-02-21
+- [x] Create `/ar/` folder scaffold (index, about, services, portfolio, contact, blog) ✅ 2026-02-21
+- [x] Add language switcher to `nav.html` ✅ 2026-02-21
+- [x] RTL stylesheet block for Arabic pages ✅ 2026-02-21
+- [x] Arabic font (Cairo) loaded in `head.html` for Arabic pages ✅ 2026-02-21
+- [x] `default.html` lang/dir attributes from page front matter ✅ 2026-02-21
+- [x] `footer.html` i18n strings ✅ 2026-02-21
+- [x] All EN pages: `ar_url` front matter for switcher routing ✅ 2026-02-21
+- [ ] Arabic post layout (after TASK-07 approved)
+- [ ] Blog `/ar/blog/` individual post pages (TASK-07 through TASK-10)
 
 ---
 

@@ -1,32 +1,32 @@
-# Arabic UI strings — DRAFT (awaiting TASK-01 corrections from Mohammed)
-# Status: PENDING — do not push to production until Mohammed approves.
+# Arabic UI strings — TASK-01 approved by Mohammed (2026-02-21)
+# Voice note: neutral reader-action voice (ل prefix on CTAs), not personal writer voice.
 
 nav:
   home: "الرئيسية"
-  about: "عنّي"
-  services: "خدماتي"
-  portfolio: "أعمالي"
-  blog: "كتاباتي"
-  contact: "تواصل"
+  about: "عن محمد"
+  services: "الخدمات"
+  portfolio: "ملف الأعمال"
+  blog: "المدونة"
+  contact: "للتواصل"
   lang_switch: "English"
 
 footer:
   quick_links: "روابط سريعة"
-  connect: "تواصل"
+  connect: "للتواصل"
   rights: "جميع الحقوق محفوظة."
-  tagline: "مهندس أنظمة ذكية"
+  tagline: "مصمم نظم ذكية"
 
 buttons:
-  more_about: "تعرّف عليّ"
-  work_with: "اعمل معي"
-  learn_more: "اعرف أكثر"
-  see_instagram: "تابعني على انستغرام"
-  see_work: "شاهد الأعمال ←"
-  get_in_touch: "تواصل معي"
+  more_about: "لمعرفة المزيد"
+  work_with: "للعمل معي"
+  learn_more: "لمعرفة المزيد"
+  see_instagram: "للعرض على إنستغرام"
+  see_work: "لمشاهدة العمل ←"
+  get_in_touch: "للتواصل معي"
 
 sections:
-  working_on: "ما أعمل عليه"
+  working_on: "الأعمال الحالية"
   how_i_think: "كيف أفكر"
-  people: "من عملت معهم"
+  people: "أشخاص عملت معهم"
   lets_talk: "لنتحدث"
-  lets_talk_sub: "سواء كان لديك مشروع، سؤال، أو تريد فقط التواصل."
+  lets_talk_sub: "سواء كان لديك مشروع، سؤال، أو تريد التواصل."
