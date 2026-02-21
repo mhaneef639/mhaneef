@@ -12,10 +12,10 @@
 ## Task Board
 
 ### ✅ Done
-- [ ] (nothing yet)
+- **TASK-01** — UI Strings (nav, footer, buttons, section labels) — integrated 2026-02-21
 
 ### 🔄 Awaiting Mohammed's Reply
-- **TASK-01** — UI Strings (nav, footer, buttons, section labels) — sent 2026-02-21
+- **TASK-02** — Homepage body content — sent 2026-02-21
 
 ### 📋 Queued (David will start after TASK-01 is approved)
 - TASK-02 — Homepage body content
