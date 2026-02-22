@@ -12,7 +12,7 @@
 
 <meta property="og:type" content="{% if page.og_type %}{{ page.og_type }}{% else %}website{% endif %}">
 <meta property="og:title" content="{{ page.og_title | default: page.title | default: 'Mohammed Haneef' }}">
-<meta property="og:description" content="{{ page.og_description | default: page.description }}">
+<meta property="og:description" content="{{ page.og_description | default: page.description | default: page.excerpt | strip_html | truncate: 160 }}">
 <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 
 {% assign og_img = page.og_image %}
@@ -26,7 +26,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ page.og_title | default: page.title | default: 'Mohammed Haneef' }}">
-<meta name="twitter:description" content="{{ page.og_description | default: page.description }}">
+<meta name="twitter:description" content="{{ page.og_description | default: page.description | default: page.excerpt | strip_html | truncate: 160 }}">
 {% if og_img %}
   {% if og_img contains 'http' %}
     <meta name="twitter:image" content="{{ og_img }}">

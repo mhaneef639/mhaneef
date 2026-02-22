@@ -2,6 +2,7 @@
 layout: post
 title: "What I Got Right. What I Got Wrong. What I Know Now."
 date: 2026-02-22 06:00:00 +0300
+description: "Last week I published a post about building an AI system that protects attention instead of consuming it. The core idea was solid. The packaging was not."
 excerpt: "Last week I published a post about building an AI system that protects attention instead of consuming it. The core idea was solid. The packaging was not."
 og_image: /assets/images/posts/intelligence-starburst.png
 ---
