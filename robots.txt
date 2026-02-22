@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block Arabic stub pages until translation is complete
+Disallow: /mhaneef/ar/
+
+Sitemap: https://mhaneef639.github.io/mhaneef/sitemap.xml

@@ -1,6 +1,10 @@
 title: Mohammed Haneef
+description: "Intelligent Systems Architect. Designing how humans and AI work together."
 url: "https://mhaneef639.github.io"
 baseurl: "/mhaneef"
+
+plugins:
+  - jekyll-sitemap
 
 # Keep current public URLs stable
 # Note: do not use global `permalink: pretty` because it changes pages like /about.html -> /about/

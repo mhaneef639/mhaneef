@@ -1,5 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 
 {% assign base_title = 'Mohammed Haneef' %}
 <title>{% if page.title and page.title != base_title %}{{ page.title }} | {{ base_title }}{% else %}{{ base_title }}{% endif %}</title>
@@ -33,6 +35,47 @@
   {% endif %}
 {% endif %}
 
+{% unless page.lang == 'ar' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohammed Haneef",
+  "jobTitle": "Intelligent Systems Architect",
+  "url": "https://mhaneef639.github.io/mhaneef/",
+  "description": "Mohammed Haneef designs systems where humans and AI each play the right role.",
+  "image": "https://mhaneef639.github.io/mhaneef/assets/images/profile.jpg",
+  "sameAs": [
+    "https://www.linkedin.com/in/mhhaneef/",
+    "https://x.com/mhaneef639",
+    "https://www.instagram.com/mhaneef639/"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jeddah",
+    "addressCountry": "SA"
+  }
+}
+</script>
+{% if page.nav == 'services' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Clarity Session",
+  "provider": {
+    "@type": "Person",
+    "name": "Mohammed Haneef",
+    "url": "https://mhaneef639.github.io/mhaneef/"
+  },
+  "description": "A focused 30-minute conversation for founders and professionals who need to decide their next move and leave with a plan.",
+  "serviceType": "Coaching and Consulting",
+  "areaServed": "Worldwide",
+  "url": "https://mhaneef639.github.io/mhaneef/services.html"
+}
+</script>
+{% endif %}
+{% endunless %}
 <link rel="stylesheet" href="{{ '/assets/css/style.css?v=redesign-20260218' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
