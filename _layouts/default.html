@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% assign page_lang = page.lang | default: 'en' %}
-{% assign page_dir = page.dir | default: 'ltr' %}
+{% if page_lang == 'ar' %}{% assign page_dir = 'rtl' %}{% else %}{% assign page_dir = 'ltr' %}{% endif %}
 <html lang="{{ page_lang }}" dir="{{ page_dir }}">
   <head>
     {% include head.html %}
