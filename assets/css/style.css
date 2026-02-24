@@ -2202,9 +2202,10 @@ section h2 {
     }
 }
 
-/* RTL mobile menu: keep column layout, slide from left instead of right */
+/* RTL mobile menu: explicitly column, slides from left */
 @media (max-width: 768px) {
     [dir="rtl"] .nav-menu {
+        flex-direction: column;
         transform: translateX(-100%);
     }
 
