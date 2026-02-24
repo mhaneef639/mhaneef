@@ -2191,13 +2191,26 @@ section h2 {
     font-size: 1.05em; /* Arabic needs slightly larger to match Latin visual weight */
 }
 
-/* Nav */
-[dir="rtl"] .nav-menu {
-    flex-direction: row-reverse;
+/* Nav — RTL desktop only */
+@media (min-width: 769px) {
+    [dir="rtl"] .nav-menu {
+        flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .nav-container {
+        flex-direction: row-reverse;
+    }
 }
 
-[dir="rtl"] .nav-container {
-    flex-direction: row-reverse;
+/* RTL mobile menu: keep column layout, slide from left instead of right */
+@media (max-width: 768px) {
+    [dir="rtl"] .nav-menu {
+        transform: translateX(-100%);
+    }
+
+    [dir="rtl"] .nav-menu.active {
+        transform: translateX(0);
+    }
 }
 
 /* Text alignment */
