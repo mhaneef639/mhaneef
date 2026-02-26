@@ -2242,6 +2242,20 @@ section h2 {
     padding-right: 0;
 }
 
+/* RTL footer — mobile: single-column layout must be centered, not right-aligned.
+   The broad [dir="rtl"] h3/h4/p/li rule sets text-align:right globally, which
+   is correct for body content but wrong for the centered mobile footer.
+   We override here with higher specificity (.footer-content h3 > h3 alone). */
+@media (max-width: 768px) {
+    [dir="rtl"] .footer-content,
+    [dir="rtl"] .footer-content h3,
+    [dir="rtl"] .footer-content h4,
+    [dir="rtl"] .footer-content p,
+    [dir="rtl"] .footer-content li {
+        text-align: center;
+    }
+}
+
 /* Cards and grids — no flip needed, just text alignment */
 [dir="rtl"] .intro-card,
 [dir="rtl"] .testimonial-mini {
